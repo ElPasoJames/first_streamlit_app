@@ -15,7 +15,7 @@ my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.co
 # change the table index to use fruit names rather than table number
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
-streamlit.multiselect("Pick some fruits:"), list (my_fruit_list.index), ['Avocado','Strawberries'])
+streamlit.multiselect("Pick some fruits:", list (my_fruit_list.index), ['Avocado','Strawberries'])
 
 #enables customer to pick a friot they want to add from dropdown
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
