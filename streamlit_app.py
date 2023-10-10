@@ -59,11 +59,16 @@ streamlit.dataframe(my_data_rows)
 #fruits_to_show = my_fruit_list.loc[fruits_selected]
 #streamlit.write('Thanks for adding', fruit_selected)
 
-add_my_fruit = streamlit.multiselect("What fruits would you like to add?:", list (my_fruit_list.index))
-fruits_to_show = my_fruit_list.loc[fruits_selected]
+#add_my_fruit = streamlit.multiselect("What fruits would you like to add?:", list (my_fruit_list.index))
+#fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Convert the list of fruits to a string
-fruits_selected_string = ', '.join(fruits_selected)
+#fruits_selected_string = ', '.join(fruits_selected)
 
 # Write the message to the Streamlit app
-streamlit.write('Thanks for adding', fruits_selected_string)
+#streamlit.write('Thanks for adding', fruits_selected_string)
+
+add_my_fruit = streamlit.multiselect("What fruits would you like to add?:", list (my_fruit_list.index))
+
+# Move this line to the end of the code block
+streamlit.write('Thanks for adding', add_my_fruit)
