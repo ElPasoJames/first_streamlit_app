@@ -55,6 +55,12 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("Hello from Snowflake:")
 streamlit.dataframe(my_data_rows)
 
+#add_my_fruit = streamlit.multiselect("What fruits would you like to add?:", list (my_fruit_list.index))
+#fruits_to_show = my_fruit_list.loc[fruits_selected]
+#streamlit.write('Thanks for adding', fruit_selected)
+
 add_my_fruit = streamlit.multiselect("What fruits would you like to add?:", list (my_fruit_list.index))
 fruits_to_show = my_fruit_list.loc[fruits_selected]
+
+# Move this line to the end of the code block
 streamlit.write('Thanks for adding', fruit_selected)
