@@ -73,7 +73,11 @@ streamlit.dataframe(my_data_rows)
 # Move this line to the end of the code block
 #streamlit.write('Thanks for adding', add_my_fruit)
 
+#create fruit selection area for adding addition friut
 add_my_fruit = streamlit.multiselect("What fruits would you like to add?:", list (my_fruit_list.index))
 fruits_selected_string = ', '.join(add_my_fruit)
 # Move this line to the end of the code block
 streamlit.write('Thanks for adding {}'.format(fruits_selected_string))
+
+#this code wont work and will throw a control flow error
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
