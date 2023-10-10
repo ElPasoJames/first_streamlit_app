@@ -47,8 +47,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 # enable pandas to fruityvice
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
-#dont run anything past here
-streamlit.stop()
+
 #query data for snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
@@ -83,3 +82,6 @@ streamlit.write('Thanks for adding {}'.format(fruits_selected_string))
 
 #this code wont work and will throw a control flow error
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
+#dont run anything past here
+streamlit.stop()
